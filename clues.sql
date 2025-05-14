@@ -19,7 +19,28 @@ SELECT language FROM countrylanguages WHERE countrycode = 'VAT' AND isofficial =
 --------------------------------------------------------------------------------------------------- Clue 3 -------------------------------------------------------------------------------------------------------------------------------------
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on to a different country, a country where people speak only the language she was learning. Find out which nearby country speaks nothing but that language.
 
--- Write SQL query here
+
+-- Need to use JOIN to combine the two tables and retrieve country name
+-- SELECT name FROM countries JOIN countrylanguages ON countries.code = countrylanguages.countrycode WHERE region = 'Southern Europe' AND countrylanguages.language = 'Italian' AND countries.code != 'VAT';
+
+-- RESULTS
+--     name    
+-- ------------
+--  Italy
+--  San Marino
+
+-- Need to further filter to find country that only speaks Italian
+
+-- Data in CL table
+--     countrycode 
+--     language 
+--     isofficial 
+--     percentage 
+
+-- SQL Alias is used to make the query more readable and quicker to write (https://hightouch.com/sql-dictionary/sql-aliases)
+-- Works without c.code once we add percentage filter but keeping it for more clarity
+SELECT c.name FROM countries c JOIN countrylanguages cl ON c.code = cl.countrycode WHERE c.region = 'Southern Europe' AND cl.language = 'Italian' AND cl.percentage = 100 AND c.code != 'VAT';  
+-- Answer = San Marino
 
 
 
