@@ -47,7 +47,21 @@ SELECT c.name FROM countries c JOIN countrylanguages cl ON c.code = cl.countryco
 --------------------------------------------------------------------------------------------------- Clue 4 -------------------------------------------------------------------------------------------------------------------------------------
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
 
--- Write SQL query here
+-- DATA in Cities table
+    -- id integer NOT NULL,
+    -- name text NOT NULL,
+    -- countrycode character(3) NOT NULL,
+    -- district text NOT NULL,
+    -- population integer NOT NULL
+
+-- SELECT * FROM countries WHERE name = 'San Marino';
+--  code |    name    | continent |     region      | surfacearea | indepyear | population | lifeexpectancy |  gnp   | gnpold | localname  | governmentform | headofstate | capital | code2 
+-- ------+------------+-----------+-----------------+-------------+-----------+------------+----------------+--------+--------+------------+----------------+-------------+---------+-------
+--  SMR  | San Marino | Europe    | Southern Europe |          61 |       885 |      27000 |           81.1 | 510.00 |        | San Marino | Republic       |             |    3171 | SM
+
+
+SELECT name FROM cities WHERE countrycode = 'SMR' AND name != 'San Marino';
+-- Answer = Serravalle
 
 
 
