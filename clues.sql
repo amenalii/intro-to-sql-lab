@@ -68,7 +68,14 @@ SELECT name FROM cities WHERE countrycode = 'SMR' AND name != 'San Marino';
 --------------------------------------------------------------------------------------------------- Clue 5 -------------------------------------------------------------------------------------------------------------------------------------
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
--- Write SQL query here
+-- to search for partial text in a SQL query, use the LIKE keyword with wildcards (% and _) in the WHERE clause to specify the partial text pattern you want to search for. % represents zero or more characters, while _ represents a single character. 
+--https://www.dummies.com/article/technology/programming-web-design/sql/how-to-use-like-and-not-like-predicates-in-sql-statements-160787/#:~:text=To%20identify%20partial%20matches%2C%20SQL,stands%20for%20any%20single%20character.
+
+
+-- SELECT * FROM table WHERE name LIKE '%abc%'
+SELECT * FROM cities WHERE name LIKE 'Serra%' AND name != 'Serravalle';
+-- Answer = Serra Brazil (BRA)
+
 
 
 --------------------------------------------------------------------------------------------------- Clue 6 -------------------------------------------------------------------------------------------------------------------------------------
