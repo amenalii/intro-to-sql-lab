@@ -83,7 +83,11 @@ SELECT * FROM cities WHERE name LIKE 'Serra%' AND name != 'Serravalle';
 -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
 -- follow right behind you!
 
--- Write SQL query here
+--SELECT capital FROM countries WHERE code = 'BRA';
+-- Capital number in countries table is the same as the id number in the cities table. 
+
+SELECT ct.name FROM cities ct JOIN countries c ON ct.id = c.capital WHERE c.code = 'BRA';
+-- Answer = Brasilia
 
 
 
