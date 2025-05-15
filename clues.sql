@@ -104,3 +104,17 @@ SELECT ct.name FROM cities ct JOIN countries c ON ct.id = c.capital WHERE c.code
 
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+
+
+-- city population = 91084
+
+SELECT * FROM cities WHERE population = 91084;
+--RESULTS
+--   id  |     name     | countrycode |  district  | population 
+-- ------+--------------+-------------+------------+------------
+--  4060 | Santa Monica | USA         | California |      91084
+-- (1 row)
+
+
+
+-- CASE CLOSED......GET TO SANTA MONICA BEFORE SHE LANDS!
